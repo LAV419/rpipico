@@ -1,2 +1,1 @@
-# esp32
-
+Ejercicio IoT Raspberry Pi Pico W
