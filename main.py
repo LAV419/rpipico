@@ -51,7 +51,8 @@ async def process_mqtt_messages():
             elif topic.endswith("/modo"):
                 params["modo"] = msg
             elif topic.endswith("/rele"):
-                asyncio.create_task(rele(msg))
+                if params["modo"] == "manual":
+                    asyncio.create_task(rele(msg))
             elif topic.endswith("/destello"):
                 asyncio.create_task(destello())
             
